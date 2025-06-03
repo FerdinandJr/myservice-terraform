@@ -1,6 +1,6 @@
-# Setting Up Terraform Remote Backend with AWS S3 and DynamoDB
+# Setting Up Terraform Remote Backend with AWS S3
 
-![terraform-backend-s3-dynamodb](https://github.com/FerdinandJr/terraform-backend-s3-dynamodb/blob/27f2b92f0d2a93edfbf4c0434af0994e6767f100/terraform-backend-s3-dynamodb.svg)
+![terraform-backend-s3](https://github.com/FerdinandJr/terraform-backend-s3-dynamodb/blob/27f2b92f0d2a93edfbf4c0434af0994e6767f100/terraform-backend-s3-dynamodb.svg)
 
 ## Create an IAM Policy for Terraform
 To allow Terraform to access the required AWS resources, create an IAM policy with the following permissions:
@@ -25,9 +25,6 @@ Go to IAM > Users in the AWS Console.
 ### Create S3 Bucket
 Used to store the remote Terraform state file.
 
-### Create DynamoDB Table
-Used to handle state locking. Make sure the table includes a primary key attribute called LockID.
-
 ## Configure the Terraform Backend
 
 ```bash
@@ -36,7 +33,7 @@ terraform {
     bucket         = "my-terraform-state-321"          # Name of the S3 bucket to store the state file
     key            = "envs/prod/terraform.tfstate"     # Path within the S3 bucket (state file location)
     region         = "ap-southeast-1"                  # AWS region where the S3 bucket and DynamoDB table are hosted
-    dynamodb_table = "terraform-locks"                 # DynamoDB table used for state locking and consistency
+    use_lockfile   = true                              # ✅ Native S3-based state locking!
     encrypt        = true                              # Enable server-side encryption for the state file
   }
 }
