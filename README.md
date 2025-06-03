@@ -1,6 +1,6 @@
 # Setting Up Terraform Remote Backend with AWS S3 and DynamoDB
 
-![terraform-backend-s3-dynamodb](https://github.com/FerdinandJr/terraform-backend-s3-dynamodb/blob/5a246d4dfcf9bccb407ebb5b0df645fe1a9003b7/Terraform%20Remote%20Backend.svg)
+![terraform-backend-s3-dynamodb](https://github.com/FerdinandJr/terraform-backend-s3-dynamodb/blob/27f2b92f0d2a93edfbf4c0434af0994e6767f100/terraform-backend-s3-dynamodb.svg)
 
 ## Create an IAM Policy for Terraform
 To allow Terraform to access the required AWS resources, create an IAM policy with the following permissions:
