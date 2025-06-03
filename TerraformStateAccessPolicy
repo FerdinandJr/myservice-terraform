@@ -15,17 +15,6 @@
       ]
     },
     {
-      "Sid": "TerraformDynamoDBAccess",
-      "Effect": "Allow",
-      "Action": [
-        "dynamodb:GetItem",
-        "dynamodb:PutItem",
-        "dynamodb:DeleteItem",
-        "dynamodb:UpdateItem"
-      ],
-      "Resource": "arn:aws:dynamodb:us-east-1:123456789012:table/terraform-locks"
-    },
-    {
 		"Sid": "AvailabilityZone",
 		"Effect": "Allow",
 		"Action": "ec2:DescribeAvailabilityZones",
