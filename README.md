@@ -1,26 +1,24 @@
 # Setting Up Terraform Remote Backend with AWS S3 and DynamoDB
 
+![terraform-backend-s3-dynamodb](https://github.com/FerdinandJr/terraform-backend-s3-dynamodb/blob/5a246d4dfcf9bccb407ebb5b0df645fe1a9003b7/Terraform%20Remote%20Backend.svg)
+
 ## Create an IAM Policy for Terraform
 To allow Terraform to access the required AWS resources, create an IAM policy with the following permissions:
 
-```bash
-TerraformStateAccessPolicy File Attached
-```
-
-## Attach the Policy to the IAM User
+### Attach the Policy to the IAM User
 Go to IAM > Users in the AWS Console.
 
-Select your user (e.g., terraform-user).
+1. Select your user (e.g., terraform-user).
 
-Navigate to the Permissions tab.
+2. Navigate to the Permissions tab.
 
-Click Add permissions > Attach policies directly.
+3. Click Add permissions > Attach policies directly.
 
-Click Create policy, switch to the JSON tab, and paste the policy above.
+4. Click Create policy, switch to the JSON tab, and paste the policy above.
 
-Name it: TerraformStateAccessPolicy.
+5. Name it: TerraformStateAccessPolicy.
 
-Create and attach it to the user.
+6. Create and attach it to the user.
 
 ## Set Up the Backend in Terraform
 
@@ -35,11 +33,11 @@ Used to handle state locking. Make sure the table includes a primary key attribu
 ```bash
 terraform {
   backend "s3" {
-    bucket         = "my-terraform-state-321"
-    key            = "envs/prod/terraform.tfstate"
-    region         = "ap-southeast-1"
-    dynamodb_table = "terraform-locks"
-    encrypt        = true
+    bucket         = "my-terraform-state-321"          # Name of the S3 bucket to store the state file
+    key            = "envs/prod/terraform.tfstate"     # Path within the S3 bucket (state file location)
+    region         = "ap-southeast-1"                  # AWS region where the S3 bucket and DynamoDB table are hosted
+    dynamodb_table = "terraform-locks"                 # DynamoDB table used for state locking and consistency
+    encrypt        = true                              # Enable server-side encryption for the state file
   }
 }
 ```
