@@ -13,12 +13,6 @@
         "arn:aws:s3:::my-terraform-state-bucket",
         "arn:aws:s3:::my-terraform-state-bucket/*"
       ]
-    },
-    {
-		"Sid": "AvailabilityZone",
-		"Effect": "Allow",
-		"Action": "ec2:DescribeAvailabilityZones",
-		"Resource": "*"
     }
   ]
 }
