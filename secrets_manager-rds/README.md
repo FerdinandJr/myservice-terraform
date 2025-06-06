@@ -1,6 +1,6 @@
 # Using AWS Secrets Manager with Terraform to Store RDS Credentials
 
-![terraform-backend-s3](terraform-backend-s3.svg)
+![terraform-secrets-manager](https://github.com/FerdinandJr/myservice-terraform/blob/67d0262d142fe84b2b310d1fd11338b20a6a5364/secrets_manager-rds/Terraform-Secrets_Manager.svg)
 
 ## Create a Secret in AWS Secrets Manager
 
