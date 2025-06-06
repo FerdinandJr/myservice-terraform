@@ -3,9 +3,9 @@
 [![terraform_three_tier_architecture](https://img.youtube.com/vi/QTXNUg4UYhI/0.jpg)](https://www.youtube.com/watch?v=QTXNUg4UYhI)
 
 ## Table of Contents
-- [Install Terraform and AWS CLI in Windows](#Install Terraform and AWS CLI in Windows)
-- [Install Terraform and AWS CLI in Linux](#Install Terraform and AWS CLI in Linux)
-- [Configure AWS CLI](#Configure AWS CLI)
+- [Install Terraform and AWS CLI in Windows](#install-terraform-and-aws-cli-in-windows)
+- [Install Terraform and AWS CLI in Linux](#install-terraform-and-aws-cli-in-linux)
+- [Configure AWS CLI](#configure-aws-cli)
 - [Video](#video)
 
 ## Install Terraform and AWS CLI in Windows
